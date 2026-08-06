@@ -1,0 +1,28 @@
+name: Build
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  windows-x64:
+    runs-on: windows-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Download official SCS SDK
+        shell: pwsh
+        run: ./scripts/bootstrap-sdk.ps1
+
+      - name: Build, test, and package
+        shell: pwsh
+        run: ./build.ps1 -ReleasePackage -Version 1.1.0
+
+      - name: Upload release package
+        uses: actions/upload-artifact@v4
+        with:
+          name: Intelligent-Cruise-Control-ETS2-1.60
+          path: build/Intelligent_Cruise_Control_1.1.0_ETS2_1.60.zip
+          if-no-files-found: error

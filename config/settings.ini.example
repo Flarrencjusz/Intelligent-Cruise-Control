@@ -1,0 +1,11 @@
+[intelligent_cruise_control]
+# 1 enables automatic adjustment when the plugin loads; 0 disables it.
+enabled=1
+
+# Windows virtual-key code used to show or hide the mini HUD.
+# 33 is Page Up. See Microsoft's Virtual-Key Codes documentation for alternatives.
+hud_hotkey_vk=33
+
+# Initial mini HUD position in desktop pixels.
+hud_x=40
+hud_y=120

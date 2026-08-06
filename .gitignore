@@ -1,0 +1,17 @@
+# Build products
+/build/
+*.obj
+*.exp
+*.lib
+*.pdb
+
+# Downloaded tools and extracted game data
+/.tools/
+/.reference/
+
+# Editors and operating systems
+.vs/
+.vscode/
+.idea/
+Thumbs.db
+Desktop.ini
